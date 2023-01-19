@@ -1,0 +1,131 @@
+.hotel-form {
+	margin: 0 auto;
+	align-items: center;
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: row;
+	width: 1000px;
+	gap: 30px;
+}
+
+.form-content {
+	display: flex;
+	flex-direction: column;
+	/* width: 900px; */
+}
+
+.hotel-form .label-destination {
+	text-align: left;
+}
+
+.form-row-container {
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+	margin-bottom: 10px;
+}
+
+.form-col-container {
+	display: flex;
+	flex-direction: column;
+	width: 340px;
+	text-align: left;
+}
+
+.hotel-form input,
+.hotel-form select {
+	width: 100%;
+	height: 45px;
+	border: none;
+	background-color: #f4f4f4;
+	margin-bottom: 12px;
+	padding: 0 15px;
+	outline: none;
+	font-size: 16px;
+	color: #3d3935;
+}
+
+.hotel-form input:nth-child(1) {
+	background: transparent;
+}
+
+.hotel-form label {
+	font-size: 14px;
+	letter-spacing: 2px;
+	font-weight: 500;
+	color: #3d3935;
+	margin-bottom: 5px;
+}
+
+.hotel-form .search {
+	background-color: #b38b7a;
+	color: #fff;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	width: 100%;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 600;
+	position: relative;
+	bottom: 73px;
+}
+
+.hotel-form .search:hover {
+	background-color: #8f6456;
+}
+
+.hotel-form .calendar-icon {
+	position: absolute;
+	float: right;
+	margin-top: 15px;
+	/* margin: auto 0; */
+	margin-right: 20px;
+}
+
+.hotel-form .input-date {
+	width: 100%;
+	height: 45px;
+	border: none;
+	background-color: #f4f4f4;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.input-room-guest {
+	position: absolute;
+	background-color: #f4f4f4;
+	top: 1210px;
+	width: 300px;
+	height: 250px;
+	border: 2px solid;
+	padding: 0 10px;
+}
+
+.input-room-guest .room-container {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.input-room-guest .room-container .room-input-container {
+	display: flex;
+}
+
+.input-room-guest .room-container p {
+	font-size: 24px;
+	margin: auto 0;
+	text-transform: capitalize;
+}
+
+.input-room-guest .button-room-guest {
+	font-size: 26px;
+	margin: auto 0;
+}
+
+.input-room-guest .input-room {
+	/* padding: auto 0; */
+	width: 70px;
+	/* height: 57px; */
+	margin-bottom: 0;
+}

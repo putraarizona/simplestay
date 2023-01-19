@@ -1,0 +1,40 @@
+.hero-image {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../assets/img/1.jpg');
+	height: 565px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.hero-text {
+	color: #fff;
+	font-size: 56px;
+	text-align: center;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+}
+
+.hero-button {
+	text-align: center;
+	position: absolute;
+	top: 58%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 10px 40px;
+	border: white solid 2px;
+	background: transparent;
+	font-size: 16px;
+	color: #fff;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 500ms ease;
+}
+
+.hero-button:hover {
+	background: white;
+	color: black;
+}

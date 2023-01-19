@@ -1,0 +1,51 @@
+.Navbar {
+	background-color: white;
+	/* z-index: 1000; */
+}
+
+.navbar-content {
+	max-width: 1280px;
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	height: 70px;
+	text-decoration: none;
+}
+
+.navbar-content h2 {
+	cursor: pointer;
+	margin: auto 0;
+}
+
+ul {
+	display: flex;
+	list-style-type: none;
+	text-decoration: none;
+	text-transform: uppercase;
+	gap: 35px;
+}
+
+ul li {
+	margin: auto 0;
+}
+
+ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+.button-container {
+	display: flex;
+	height: 40px;
+	margin: auto 0;
+	gap: 10px;
+}
+
+.navbar-content .button-container button {
+	border: none;
+	border-radius: 30px;
+	/* height: 30px; */
+	/* margin: 20px; */
+	padding: 10px 20px;
+	cursor: pointer;
+}

@@ -1,7 +1,6 @@
 .hotel-form {
 	margin: 0 auto;
 	align-items: center;
-	text-transform: uppercase;
 	display: flex;
 	flex-direction: row;
 	width: 1000px;
@@ -11,7 +10,6 @@
 .form-content {
 	display: flex;
 	flex-direction: column;
-	/* width: 900px; */
 }
 
 .hotel-form .label-destination {
@@ -33,7 +31,8 @@
 }
 
 .hotel-form input,
-.hotel-form select {
+.hotel-form select,
+.hotel-form .input-rooms-guests {
 	width: 100%;
 	height: 45px;
 	border: none;
@@ -55,6 +54,7 @@
 	font-weight: 500;
 	color: #3d3935;
 	margin-bottom: 5px;
+	text-transform: uppercase;
 }
 
 .hotel-form .search {
@@ -79,7 +79,6 @@
 	position: absolute;
 	float: right;
 	margin-top: 15px;
-	/* margin: auto 0; */
 	margin-right: 20px;
 }
 
@@ -92,40 +91,83 @@
 	justify-content: flex-end;
 }
 
-.input-room-guest {
+.hotel-form .input-rooms-guests {
+	margin-bottom: 0px;
+	cursor: pointer;
+}
+
+.room-guest ul {
+	display: inline;
 	position: absolute;
 	background-color: #f4f4f4;
-	top: 1210px;
-	width: 300px;
-	height: 250px;
-	border: 2px solid;
+	top: 1205px;
+	width: inherit;
+	/* top: 80%; */
+	border: 1px solid;
 	padding: 0 10px;
+	box-shadow: 0px 0px 5px 2px #ccc;
 }
 
-.input-room-guest .room-container {
+.room-guest ul li {
 	display: flex;
 	justify-content: space-between;
-	gap: 20px;
 }
 
-.input-room-guest .room-container .room-input-container {
+.room-guest ul li .room-container,
+.room-guest ul li .guest-container {
 	display: flex;
 }
 
-.input-room-guest .room-container p {
-	font-size: 24px;
+.room-guest ul li p {
+	font-size: 16px;
 	margin: auto 0;
 	text-transform: capitalize;
 }
 
-.input-room-guest .button-room-guest {
+.room-guest ul li .button-room-guest {
+	cursor: pointer;
 	font-size: 26px;
 	margin: auto 0;
 }
 
-.input-room-guest .input-room {
-	/* padding: auto 0; */
+.room-guest ul li input {
 	width: 70px;
-	/* height: 57px; */
 	margin-bottom: 0;
+}
+
+.room-guest ul li input {
+	text-align: center;
+}
+
+.input-rooms-guests {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.input-rooms-guests p {
+	margin: auto 0;
+}
+
+.input-rooms-guests .dropdown-icon {
+	font-size: 22px;
+	margin: auto 0;
+}
+
+.input-rate {
+	appearance: none;
+	cursor: pointer;
+}
+
+.input-rate option {
+	background-color: #f4f4f4;
+	box-shadow: 0px 0px 5px 2px #ccc;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.hide-spin-button::-webkit-inner-spin-button,
+.hide-spin-button::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }

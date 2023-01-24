@@ -3,8 +3,9 @@
 	align-items: center;
 	display: flex;
 	flex-direction: row;
-	width: 1000px;
+	width: 1100px;
 	gap: 30px;
+	margin-bottom: 200px;
 }
 
 .form-content {
@@ -26,7 +27,7 @@
 .form-col-container {
 	display: flex;
 	flex-direction: column;
-	width: 340px;
+	width: 380px;
 	text-align: left;
 }
 
@@ -57,8 +58,24 @@
 	text-transform: uppercase;
 }
 
-.hotel-form .search {
-	background-color: #b38b7a;
+.hotel-form .form-col-search {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0 auto;
+	height: 250px;
+}
+
+.hotel-form .form-col-search .error-massage {
+	color: red;
+	text-align: center;
+}
+
+.hotel-form #search {
+	background-color: #50a4ff;
 	color: #fff;
 	cursor: pointer;
 	border: none;
@@ -67,12 +84,11 @@
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-weight: 600;
-	position: relative;
-	bottom: 73px;
+	margin-top: 23px;
 }
 
-.hotel-form .search:hover {
-	background-color: #8f6456;
+.hotel-form #search:hover {
+	background-color: #0073f0;
 }
 
 .hotel-form .calendar-icon {
@@ -99,10 +115,8 @@
 .room-guest ul {
 	display: inline;
 	position: absolute;
-	background-color: #f4f4f4;
 	top: 1205px;
 	width: inherit;
-	/* top: 80%; */
 	border: 1px solid;
 	padding: 0 10px;
 	box-shadow: 0px 0px 5px 2px #ccc;

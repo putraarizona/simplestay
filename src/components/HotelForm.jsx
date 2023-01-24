@@ -13,12 +13,15 @@ import 'react-datepicker/dist/react-datepicker.css';
 const HotelForm = () => {
 	const [startDate, setStartDate] = useState(new Date());
 	const [endDate, setEndDate] = useState(new Date(new Date().setDate(new Date().getDate() + 1)));
+	const [destination, setDestination] = useState();
 	const [rooms, setRooms] = useState(1);
 	const [guests, setGuests] = useState(1);
 
 	const [isClicked, setIsClicked] = useState(false);
+	const [isSubmitted, setIsSubmitted] = useState(false);
 
 	const handleIncrement = (name) => {
+		console.log(destination);
 		if (name == 'rooms') {
 			if (rooms < 9) {
 				setRooms(parseFloat(rooms + 1));
@@ -101,12 +104,17 @@ const HotelForm = () => {
 		}
 	};
 
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		setIsSubmitted(true);
+	};
+
 	return (
-		<form action='' className='hotel-form'>
+		<form action='' className='hotel-form' onSubmit={(event) => handleSubmit(event)}>
 			<div className='form-content'>
 				{/* Destination */}
 				<label className='label-destination'>Destination</label>
-				<input type='text' name='' id='' className='input-destination' placeholder='What is your destination?' />
+				<input type='text' name='' id='' className='input-destination' placeholder='What is your destination?' onChange={(event) => setDestination(event.target.value)} />
 
 				{/* Rooms & Guests */}
 				<div className='form-row-container'>
@@ -145,9 +153,9 @@ const HotelForm = () => {
 								<li>
 									<p>Rooms</p>
 									<div className='room-container'>
-										<AiFillMinusCircle className='minus-button button-room-guest' onClick={() => handleDecrement('rooms')} style={{ color: rooms == 1 ? '#D9C5BD' : '#B38B7A' }} />
+										<AiFillMinusCircle className='minus-button button-room-guest' onClick={() => handleDecrement('rooms')} style={{ color: rooms == 1 ? '#84BFFF' : '#0073F0' }} />
 										<input type='number' className='hide-spin-button' value={rooms} onChange={(event) => handleInput(event.target.value, 'rooms')} />
-										<AiFillPlusCircle className='plus-button button-room-guest' onClick={() => handleIncrement('rooms')} style={{ color: rooms == 9 ? '#D9C5BD' : '#B38B7A' }} />
+										<AiFillPlusCircle className='plus-button button-room-guest' onClick={() => handleIncrement('rooms')} style={{ color: rooms == 9 ? '#84BFFF' : '#0073F0' }} />
 									</div>
 								</li>
 
@@ -155,9 +163,9 @@ const HotelForm = () => {
 								<li>
 									<p>Guests</p>
 									<div className='guest-container'>
-										<AiFillMinusCircle className='minus-button button-room-guest' onClick={() => handleDecrement('guests')} style={{ color: guests == 1 ? '#D9C5BD' : '#B38B7A' }} />
+										<AiFillMinusCircle className='minus-button button-room-guest' onClick={() => handleDecrement('guests')} style={{ color: guests == 1 ? '#84BFFF' : '#0073F0' }} />
 										<input type='number' value={guests} className='hide-spin-button' onChange={(event) => handleInput(event.target.value, 'guests')} />
-										<AiFillPlusCircle className='plus-button button-room-guest' onClick={() => handleIncrement('guests')} style={{ color: guests == 99 ? '#D9C5BD' : '#B38B7A' }} />
+										<AiFillPlusCircle className='plus-button button-room-guest' onClick={() => handleIncrement('guests')} style={{ color: guests == 99 ? '#84BFFF' : '#0073F0' }} />
 									</div>
 								</li>
 							</ul>
@@ -190,7 +198,10 @@ const HotelForm = () => {
 			</div>
 
 			{/* search */}
-			<input type='submit' name='search' id='search' value='search' className='search' />
+			<div className='form-col-search'>
+				<input type='submit' name='search' id='search' value='search' className='search' />
+				{isSubmitted && !destination && <p className='error-massage'>Please enter a destination</p>}
+			</div>
 		</form>
 	);
 };

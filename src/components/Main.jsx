@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import { motion, useMotionValue, useTransform, useInView } from 'framer-motion';
 
 import HotelForm from './HotelForm';
 
@@ -16,6 +17,8 @@ import profile2 from '../assets/img/profile2.jpg';
 import profile3 from '../assets/img/profile3.jpg';
 
 const Main = () => {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true });
 	return (
 		<div className='Main'>
 			<h2 className='main-heading'>Hotels, Resorts, Hostels & More</h2>
@@ -25,8 +28,15 @@ const Main = () => {
 			<h2 className='main-heading'>Why You Should Choose Us</h2>
 			<p className='main-text'>We have sorted all the hotels here based on their equality</p>
 
-			<div className='why-choose-us'>
-				<ul className='col-1 reason-container'>
+			<div ref={ref} className='why-choose-us'>
+				<ul
+					className='col-1 reason-container'
+					style={{
+						transform: isInView ? 'none' : 'translateX(-200px)',
+						opacity: isInView ? 1 : 0,
+						transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)',
+					}}
+				>
 					<li className='row-1 reason'>
 						<RiStarFill className='icon-reason' />
 						<h3>We provide the best choice of hotels for you to stay</h3>
@@ -43,10 +53,33 @@ const Main = () => {
 						<p>Booking your dream vacation with just a few clicks and without complicated steps, in our streamlined booking process, to ensure a smooth and stress-free experience.</p>
 					</li>
 				</ul>
-				<div className='col-2 banner-container'>
+				<div
+					className='col-2 banner-container'
+					style={{
+						transform: isInView ? 'none' : 'translateX(300px)',
+						opacity: isInView ? 1 : 0,
+						transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)',
+					}}
+				>
 					<img src={banneHotelVertical} alt='' id='banner-vertical' />
-					<img src={banneHotelHorizontal} alt='' id='banner-horizontal' />
-					<div className='review-card card-1'>
+					<img
+						src={banneHotelHorizontal}
+						alt=''
+						id='banner-horizontal'
+						style={{
+							transform: isInView ? 'scale(1)' : 'scale(0)',
+							opacity: isInView ? 1 : 0,
+							transition: 'all 0.9s cubic-bezier(0.17, 0.33, 0.43, 1) 1s',
+						}}
+					/>
+					<div
+						className='review-card card-1'
+						style={{
+							transform: isInView ? 'none' : 'translateY(-100px)',
+							opacity: isInView ? 1 : 0,
+							transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+						}}
+					>
 						<img src={profile1} alt='' className='profile-photo' />
 						<div className='text-container'>
 							<p className='profile-name'>Andrew Tate</p>
@@ -55,7 +88,14 @@ const Main = () => {
 							</p>
 						</div>
 					</div>
-					<div className='review-card card-2'>
+					<div
+						className='review-card card-2'
+						style={{
+							transform: isInView ? 'none' : 'translateX(-100px)',
+							opacity: isInView ? 1 : 0,
+							transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.7s',
+						}}
+					>
 						<img src={profile2} alt='' className='profile-photo' />
 						<div className='text-container'>
 							<p className='profile-name'>Arthur Morgan</p>
@@ -64,7 +104,14 @@ const Main = () => {
 							</p>
 						</div>
 					</div>
-					<div className='review-card card-3'>
+					<div
+						className='review-card card-3'
+						style={{
+							transform: isInView ? 'none' : 'translateX(100px)',
+							opacity: isInView ? 1 : 0,
+							transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s',
+						}}
+					>
 						<img src={profile3} alt='' className='profile-photo' />
 						<div className='text-container'>
 							<p className='profile-name'>Robin Schulz</p>

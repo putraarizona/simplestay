@@ -17,7 +17,6 @@
 
 .why-choose-us {
 	display: flex;
-	/* justify-content: space-between; */
 	gap: 250px;
 	width: 1550px;
 	height: 700px;
@@ -27,7 +26,6 @@
 .reason-container {
 	display: flex;
 	flex-direction: column;
-	/* width: 30%; */
 }
 
 #banner-vertical {

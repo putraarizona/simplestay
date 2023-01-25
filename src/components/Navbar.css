@@ -1,5 +1,5 @@
 .Navbar {
-	background-color: #282828;
+	background-color: #fff;
 }
 
 .navbar-content {
@@ -14,7 +14,7 @@
 .navbar-content h2 {
 	cursor: pointer;
 	margin: auto 0;
-	color: #fff;
+	color: #282828;
 }
 
 ul {
@@ -31,7 +31,7 @@ ul li {
 
 ul li a {
 	text-decoration: none;
-	color: #fff;
+	color: #282828;
 }
 
 .button-container {
@@ -52,16 +52,16 @@ ul li a {
 }
 
 #button-sign-in {
-	color: #282828;
+	color: #fff;
 	width: 110px;
-	background-color: white;
+	background-color: #282828;
 	padding-top: 10px;
 }
 
 #button-sign-up {
-	color: white;
+	color: #282828;
 	width: 110px;
-	border: solid 2px white;
+	border: solid 2px #282828;
 	background-color: transparent;
 	padding-top: 8px;
 }
